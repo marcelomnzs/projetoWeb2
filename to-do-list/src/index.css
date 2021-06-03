@@ -4,12 +4,43 @@
 @tailwind utilities;
 
 @layer components{
-    .btn-azul-3D{
-        @apply ml-2 bg-blue-600 hover:bg-blue-400 text-white font-bold py-1 px-3 border-b-4 border-blue-700 hover:border-blue-500 rounded
+
+    :root{
+        --corA: #192a51;
+        --corB: #1177ac;
+    }
+
+    body{
+        background-image: linear-gradient(to right, #153070, #1177ac);
+        /* color:white; */
+    }
+
+    input:focus{
+        box-shadow: 0 0 0 0;
+        outline: none;
+    }
+
+    .inputEffect{
+        border: 0;
+        padding: 7px 0;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 15px;
+    }
+
+    .btn-azul{
+       @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2
     }
 
     .taskList{
-        @apply bg-green-500 justify-self-center
-
+       @apply grid place-content-center mt-4 pb-7
     }
+
+    .task{
+        @apply p-5 w-full
+    }
+
+    .task > button {
+        @apply relative bottom-2 float-right ml-8 bg-blue-700 p-2 text-white rounded
+    }
+
 }

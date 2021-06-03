@@ -1,7 +1,7 @@
 <template>
   <div>
     {{ task }}
-    <button @click="finishTask" class="">Done</button>
+    <button @click="finishTask">Done</button>
   </div>
 </template>
 

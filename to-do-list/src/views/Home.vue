@@ -1,15 +1,24 @@
 <template>
-  <div>
-    <h1 class="mt-9 text-center font-bold text-4xl">Suas Tasks</h1>
-    <div class="grid justify-items-center mt-8">
-    <form>
-      <label>New Task:</label>
-      <input class="ml-2 border border-gray-400" type="text" v-model="newTask"/>
-      <button class="btn-azul-3D" @click.prevent = addTask()>Create New Task</button>
-    </form>
+  <div class="max-w-lg max-h-full max-h-full mx-auto rounded-md bg-white">
+    <div class="relative">
+      <div class="absolute inset-y-0 right-0 p-6 top-3">
+        <h3>Tasks Ativas (<span class="font-bold">{{ tasks.length }}</span>) </h3>
+      </div>
+    <h1 class="px-6 pt-6 font-black text-3xl">To-do-List</h1>
     </div>
-      
-      <TaskForm v-for="(task, index) of tasks" :key="task" :task="task" :index="index" class="" /> 
+
+    <div class="mt-20 grid place-items-center">
+      <form>
+        <div>
+          <input class="relative inputEffect" type="text" v-model="newTask" placeholder="Type your task"/>
+          <button class="btn-azul" @click.prevent = addTask()>Create New Task</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="taskList">
+      <TaskForm v-for="(task, index) of tasks" :key="task" :task="task" :index="index" class="task"/> 
+    </div>
     
   </div>
   
